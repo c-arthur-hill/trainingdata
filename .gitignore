@@ -1,0 +1,15 @@
+*.pyc
+secret_settings.py
+/static
+/media
+trainingdataenv
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+__pycache__/
+*.log
+db.sqlite3

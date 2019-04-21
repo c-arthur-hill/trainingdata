@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'users',
     'calendars',
 ]
@@ -40,6 +41,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'trainingdata.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {

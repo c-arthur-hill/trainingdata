@@ -1,9 +1,30 @@
 {% extends "base.html" %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit">
-</form>
+<div class="jumbotron-fluid">
+    <div class="row bg-warning no-gutters">
+        <div class="col-sm-6">
+            {% load static %}
+            <img class="img-fluid" src="{% static "img/hero-3.jpg" %}" alt="bicyclist in yellow jersey descending hill"/>
+        </div>
+            <div class="col-sm-6 align-middle">
+                <div class="px-4">
+                    <h1 class="display-4 font-weight-bold d-none d-lg-block d-xl-block"><br class="d-none d-xl-block">Stronger Lungs. 
+                        <br class="d-none d-xl-block"><br class="d-none d-xl-block">Stronger Legs. 
+                        <br class="d-none d-xl-block"><br class="d-none d-xl-block">More Cash In Your Pocket.</h1>
+                    <h1 class="display-4 font-weight-bold d-none d-sm-block d-lg-none">Increase Power. Save Cash.</h1>
+                    <h1 class="d-block d-sm-none">Increase Power. Save Cash.</h1>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input class="btn-danger btn-lg d-none d-md-block " type="submit" value="Start 30 Day Free Training">
+                        <input class="btn-danger mb-2 btn d-md-none" type="submit" value="30 Days Free">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

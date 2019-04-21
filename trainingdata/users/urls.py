@@ -18,6 +18,6 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url('', views.EmailView.as_view()), 
+    url(r'^$', views.EmailView.as_view()), 
 ]
 

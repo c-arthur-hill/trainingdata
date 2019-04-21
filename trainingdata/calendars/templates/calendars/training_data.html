@@ -1,6 +1,22 @@
 {% extends "base.html" %}
 
+{% load crispy_forms_tags %}
 
 {% block content %}
-{{ training_data_html }}
+<div class="row">
+    <div class="col-8 ml-auto mr-auto">
+        {{ form.non_field_errors }}
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input type="submit" value="Upload .fit File" class="btn btn-success">
+        </form>
+        <h1>here</h1>
+        {% for fit_file in fit_files %}
+            <a download href="{{ fit_file.uploaded_file.url }}">Download</a>
+        {% endfor %}
+        <h1>here</h1>
+        {{ training_data_html }}
+    </div>
+</div>
 {% endblock %}

@@ -7,22 +7,29 @@
     <div class="row bg-warning no-gutters mb-2">
         <div class="col-md-6">
             {% load static %}
+            <!-- For collapsed imgs -->
             <img srcset="{% static "img/hero-576.jpg" %} 576w,
                          {% static "img/hero-768.jpg" %} 768w,
+                         {% static "/img/hero-1.jpg" %} 992w"
+                 sizes="(max-width: 576px) 576px,
+                        (max-width: 768px) 768px,
+                        992px"
+                 src="{% static "/img/hero-1.jpg" %}"
+                 class="img-fluid d-none d-sm-block d-md-none" alt="bicyclist in yellow jersey descending hill"/>
+            <img srcset="{% static "img/hero-1.jpg" %} 768w,
                          {% static "/img/hero-992.jpg" %} 992w,
                          {% static "/img/hero-1200.jpg" %} 1200w,
                          {% static "/img/hero-2400.jpg" %} 2400w"
-                 sizes="(max-width: 576px) 576px,
-                        (max-width: 768px) 768px,
+                 sizes="(max-width: 768px) 768px,
                         (max-width: 992px) 992px,
                         (max-width: 1200px) 1200px,
                         2400px"
                  src="{% static "/img/hero-2400.jpg" %}"
-                 class="img-fluid" alt="bicyclist in yellow jersey descending hill"/>
+                 class="img-fluid d-none d-md-block" alt="bicyclist in yellow jersey descending hill"/>
         </div>
             <div class="col-md-6 align-middle">
                 <div class="px-4">
-                    <h1 class="display-4 font-weight-bold">Too much training?<br>Too little?</h1>
+                    <h1 class="display-4 font-weight-bold">Too Much Training?<br>Too Little?</h1>
                     <form method="post">
                         {% csrf_token %}
                         {{ form|crispy }}

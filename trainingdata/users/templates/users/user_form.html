@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="jumbotron-fluid">
-    <div class="row no-gutters mb-2">
+    <div class="row bg-warning no-gutters mb-2">
         <div class="col-md-6">
             {% load static %}
             <img srcset="{% static "img/hero-576.jpg" %} 576w,
@@ -20,7 +20,7 @@
                  src="{% static "/img/hero-2400.jpg" %}"
                  class="img-fluid" alt="bicyclist in yellow jersey descending hill"/>
         </div>
-            <div class="col-md-6 bg-warning align-middle">
+            <div class="col-md-6 align-middle">
                 <div class="px-4">
                     <h1 class="display-4 font-weight-bold">Too much training?<br>Too little?</h1>
                     <form method="post">

@@ -10,12 +10,12 @@
             <!-- For collapsed imgs -->
             <img srcset="{% static "img/hero-576.jpg" %} 576w,
                          {% static "img/hero-768.jpg" %} 768w,
-                         {% static "/img/hero-1.jpg" %} 992w"
+                         {% static "/img/hero-1.jpg" %} 1w"
                  sizes="(max-width: 576px) 576px,
                         (max-width: 768px) 768px,
-                        992px"
+                        1px"
                  src="{% static "/img/hero-576.jpg" %}"
-                 class="img-fluid d-none d-sm-block d-md-none" alt="bicyclist in yellow jersey descending hill"/>
+                 class="img-fluid d-block d-md-none" alt="bicyclist in yellow jersey descending hill"/>
             <img srcset="{% static "img/hero-1.jpg" %} 768w,
                          {% static "/img/hero-992.jpg" %} 992w,
                          {% static "/img/hero-1200.jpg" %} 1200w,

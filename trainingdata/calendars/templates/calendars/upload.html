@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="/calendar">Calendar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/upload">Upload</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <div class="row mb-3">
+            <div class="col-12">
+                <h1>Upload .Fit Files</h1>
+                <form method="POST" enctype="multipart/form-data">
+                    {{ form.non_field_errors }}
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <input type="submit" value="Upload .fit File" class="btn btn-success">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

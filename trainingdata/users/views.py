@@ -6,7 +6,7 @@ from django.contrib.auth import get_user_model
 class EmailView(CreateView):
     model = get_user_model()
     fields = ['email', 'password']
-    success_url = '/calendar/view/today/'
+    success_url = '/calendar/home/'
 
     def get_form(self, form_class=None):
         form = super(EmailView, self).get_form(form_class)

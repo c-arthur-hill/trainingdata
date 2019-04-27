@@ -20,5 +20,6 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url('home/', views.FitFileView.as_view()),
+    url('upload/', views.FitFileView.as_view()),
+    url('calendar/', views.CalendarView.as_view()),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

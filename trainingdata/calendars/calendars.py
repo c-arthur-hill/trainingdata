@@ -1,8 +1,9 @@
-from calendar import HTMLCalendar
+from calendar import HTMLCalendar, month_name
 from .models import DailyData
 
 #https://alexpnt.github.io/2017/07/15/django-calendar/
 class TrainingData(HTMLCalendar):
+
     def __init__(self, data=None):
         super(TrainingData, self).__init__()
         self.data = []
@@ -22,11 +23,17 @@ class TrainingData(HTMLCalendar):
         s = ''.join(self.formatday(d, wd, self.data) for (d, wd) in theweek)
         return '<tr>%s</tr>' % s
 
+    def formatmonthname(self, theyear, themonth, withyear=True):
+        s = month_name[themonth]
+        if withyear:
+            s += (' ' + str(theyear))
+        return '<h5 class="text-secondary">%s</h5>' % s
+
     def formatmonth(self, theyear, themonth, withyear=True):
         month = []
-        month.append('<table border="0" cellpadding="0" cellspacing="0" class="table">')
-        month.append('\n')
         month.append(self.formatmonthname(theyear, themonth, withyear=withyear))
+        month.append('\n')
+        month.append('<table border="0" cellpadding="0" cellspacing="0" class="table table-bordered">')
         month.append('\n')
         month.append(self.formatweekheader())
         month.append('\n')
